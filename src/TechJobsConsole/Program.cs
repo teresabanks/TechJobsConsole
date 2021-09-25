@@ -5,6 +5,8 @@ namespace TechJobsConsole
 {
     class Program
     {
+        public static IEnumerable<Dictionary<string, string>> AllJobs { get; private set; }
+
         static void Main(string[] args)
         {
             // Create two Dictionary vars to hold info for menu and data
@@ -118,7 +120,17 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            Console.WriteLine("PrintJobs is not implemented yet");
+           foreach (Dictionary<string, string> job in someJobs)
+            {
+                foreach(KeyValuePair<string,string> item in job)
+                {
+                    Console.WriteLine(item.Key + " : " + item.Value);
+                }
+            }
+            
+
+          
+           
         }
     }
 }
