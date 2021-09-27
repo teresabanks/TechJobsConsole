@@ -149,15 +149,12 @@ namespace TechJobsConsole
               foreach(KeyValuePair<string,string> column in row)
                 {
                     string lineItem = column.Value;
-                    if (lineItem.Contains(value))
+                    if (lineItem.ToLower().Contains(value))
                     {
                         results.Add(row);
                         break;
                     }
                 }
-
-                
- 
             }
 
             return results;
