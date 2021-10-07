@@ -70,7 +70,7 @@ namespace TechJobsConsole
                     }
                     else
                     {
-                        searchResults = JobData.FindByColumnAndValue(columnChoice, searchTerm);
+                        searchResults = JobData.FindByColumnAndValue(columnChoice, searchTerm.ToLower());
                         PrintJobs(searchResults);
                     }
                 }
@@ -123,6 +123,7 @@ namespace TechJobsConsole
         {
            foreach (Dictionary<string, string> job in someJobs)
             {
+                Console.WriteLine("****");
                 foreach(KeyValuePair<string,string> item in job)
                 {
                     Console.WriteLine(item.Key + " : " + item.Value);

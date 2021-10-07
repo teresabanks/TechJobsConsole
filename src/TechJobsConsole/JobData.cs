@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -49,7 +50,7 @@ namespace TechJobsConsole
             {
                 string aValue = row[column];
 
-                if (aValue.Contains(value))
+                if (aValue.ToLower().Contains(value))
                 {
                     jobs.Add(row);
                 }
@@ -152,6 +153,11 @@ namespace TechJobsConsole
                     if (lineItem.ToLower().Contains(value))
                     {
                         results.Add(row);
+                        break;
+                    }
+                    else 
+                    {
+                        Console.WriteLine("No Jobs Found");
                         break;
                     }
                 }
