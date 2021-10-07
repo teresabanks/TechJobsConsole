@@ -55,7 +55,10 @@ namespace TechJobsConsole
                     jobs.Add(row);
                 }
             }
-
+            if(jobs.Count == 0)
+            {
+                Console.WriteLine("No Jobs Found");
+            }
             return jobs;
         }
 
@@ -155,14 +158,15 @@ namespace TechJobsConsole
                         results.Add(row);
                         break;
                     }
-                    else 
-                    {
-                        Console.WriteLine("No Jobs Found");
-                        break;
-                    }
+                    
+                
+                    
                 }
             }
-
+             if ( results.Count == 0)
+            {
+                Console.WriteLine("No Jobs Found");
+            }
             return results;
                 
         }
